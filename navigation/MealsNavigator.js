@@ -15,6 +15,7 @@ import MealDetailScreen from "../screens/MealDetailScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import FiltersScreen from "../screens/FiltersScreen";
 import SettingScreen from "../screens/SettingScreen";
+import TeamScreen from "../screens/TeamScreen";
 import Colors from "../constants/Colors";
 
 const defaultStackNavOptions = {
@@ -145,6 +146,15 @@ const SettingsNavigator = createStackNavigator(
     }
 );
 
+const TeamNavigator = createStackNavigator(
+    {
+        Settings: TeamScreen,
+    },
+    {
+        defaultNavigationOptions: defaultStackNavOptions,
+    }
+);
+
 const MainNavigator = createDrawerNavigator(
     {
         MealsFavs: {
@@ -155,6 +165,7 @@ const MainNavigator = createDrawerNavigator(
         },
         Filters: FiltersNavigator,
         Settings: SettingsNavigator,
+        Team: TeamNavigator,
     },
     {
         hideStatusBar: true,

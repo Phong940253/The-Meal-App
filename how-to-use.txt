@@ -7,5 +7,5 @@ You can use this attached file in two ways:
 
 2) Run my code
 For this, you can use my attachments as standalone projects. After extracting, you can navigate into them in your command prompt/ terminal (via the "cd" command) and run
-- npm install
+- yarn install
 - npm start
