@@ -14,11 +14,13 @@ import CategoryMealsScreen from "../screens/CategoryMealsScreen";
 import MealDetailScreen from "../screens/MealDetailScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import FiltersScreen from "../screens/FiltersScreen";
+import SettingScreen from "../screens/SettingScreen";
 import Colors from "../constants/Colors";
 
 const defaultStackNavOptions = {
     headerStyle: {
         backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "",
+        marginTop: 24,
     },
     headerTitleStyle: {
         fontFamily: "open-sans-bold",
@@ -134,6 +136,15 @@ const FiltersNavigator = createStackNavigator(
     }
 );
 
+const SettingsNavigator = createStackNavigator(
+    {
+        Settings: SettingScreen,
+    },
+    {
+        defaultNavigationOptions: defaultStackNavOptions,
+    }
+);
+
 const MainNavigator = createDrawerNavigator(
     {
         MealsFavs: {
@@ -143,8 +154,10 @@ const MainNavigator = createDrawerNavigator(
             },
         },
         Filters: FiltersNavigator,
+        Settings: SettingsNavigator,
     },
     {
+        hideStatusBar: true,
         contentOptions: {
             activeTintColor: Colors.accentColor,
             labelStyle: {
